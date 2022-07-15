@@ -1,0 +1,36 @@
+.Searcher{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 20px;
+}
+.Searcher .input-text{
+    width: 90%;
+    height: 35px;
+    border: 0;
+    padding: 0 0 0 10px;
+    margin: 0;
+    border-radius: 4px 0 0 4px;
+    font-size: 18px;
+    outline: 0;
+    color: #333333;
+}
+::placeholder{
+    color: #999999;
+}
+.Searcher button{
+    width: 35px;
+    height: 35px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    background-color: #EEEEEE;
+}
+.Searcher button img{
+    height: 50%;
+}

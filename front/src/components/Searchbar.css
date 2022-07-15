@@ -1,0 +1,12 @@
+.Searchbar {
+    width: 100%;
+    background-color: #FFE600;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Searchbar img{
+    height: 35px;
+}

@@ -1,0 +1,9 @@
+.Result{
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: #FFFFFF;
+    margin-bottom: 32px;
+}
