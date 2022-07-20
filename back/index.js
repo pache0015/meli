@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+var cors = require('cors');
 
 const { MeliManager } = require("./meliManager");
 
@@ -7,6 +8,13 @@ const author = {
     name: 'Facundo',
     lastname: 'Pacheco'
 }
+let res_base_search = {
+    author: author,
+    categories: [],
+    items : []
+}
+
+app.use(cors())
 
 //Endpoint a usar en: Resultado de busqueda
 app.route('/api/items')
@@ -18,7 +26,8 @@ app.route('/api/items')
         resolve(info)
     })
 
-    infoItems
+    try{
+        infoItems
         .then( info =>{
             let _items = []
             info.forEach(i => {
@@ -36,8 +45,9 @@ app.route('/api/items')
                 }
                 _items.push(item)
             });
-            const id_category = info[0].category_id
-            const categories = new Promise((resolve, reject) =>{
+            try{
+                const id_category = info[0].category_id
+                const categories = new Promise((resolve, reject) =>{
                 const info = new MeliManager().getCategories(id_category)
                 resolve(info)
             })
@@ -55,7 +65,15 @@ app.route('/api/items')
                         items : _items
                     })
                 })
+            }
+            catch{
+                res.json(res_base_search)
+            }
         })
+    }
+    catch{
+        res.json(res_base_search)
+    }
 });
 
 //Endpoint a usar en: Detalle de producto

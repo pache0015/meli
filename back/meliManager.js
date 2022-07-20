@@ -2,7 +2,7 @@ const axios = require('axios');
 const { json } = require('express');
 class MeliManager{
     constructor(){
-        this._access_token = 'APP_USR-4135340169236066-071816-fbaf6af742c2ce7da7a86ec68fcb9d5e-179689003'
+        this._access_token = 'APP_USR-4135340169236066-072008-ef12f81681b4fea4455330594d3edc63-179689003'
         this._url_base = 'https://api.mercadolibre.com/'
     }
     
