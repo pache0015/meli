@@ -1,13 +1,22 @@
-.Item{
+.Item {
+    width: 100%;
+    border-bottom: 1px solid #eee;
+}
+.Item .linkItem{
     width: 80%;
     height: 180px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     margin: 16px 0 16px 16px;
+    text-decoration: none;
+    text-align: left;
+    
 }
-.Item img{
+.Item .linkItem .producto{
     border-radius: 4px;
+    width: 150px;
+    height: 150px;
     max-width: 180px;
     max-height: 180px;
     margin-right: 16px;
@@ -34,7 +43,7 @@
     display: flex;
     align-items: center;
 }
-.Info-top-l img{
+.Info-top-l .envio{
     height: 24px;
     margin-left: 5px;
 }

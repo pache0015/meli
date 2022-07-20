@@ -1,3 +1,15 @@
+.Searchbar {
+    width: 100%;
+    background-color: #FFE600;
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.Searchbar img{
+    height: 35px;
+}
 .Searcher{
     width: 70%;
     display: flex;
@@ -20,7 +32,7 @@
 ::placeholder{
     color: #999999;
 }
-.Searcher button{
+.Searcher .linkButton {
     width: 35px;
     height: 35px;
     border: 0;
@@ -31,6 +43,6 @@
     cursor: pointer;
     background-color: #EEEEEE;
 }
-.Searcher button img{
+.Searcher .linkButton img{
     height: 50%;
 }
