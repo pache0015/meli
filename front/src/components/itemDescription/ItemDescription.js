@@ -1,4 +1,3 @@
-import envio from '../../img/ic.png'
 import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
 import { useContext } from 'react';
 import Context from '../../context/Context';
@@ -13,14 +12,15 @@ function ItemDescription({item}) {
     const sold_quantity = item ? item.sold_quantity : ''
     const price = item ? item.price : ''
     const amount = price ? price.amount : 0
-    const finalPrice = amount ? new Intl.NumberFormat('es-AR', {currency: 'ARS', style: 'currency'}).format(amount) : 0
+    const centavos = price ? price.decimals : 0
+    //const finalPrice = amount ? new Intl.NumberFormat('es-AR', {currency: 'ARS', style: 'currency'}).format(amount) : 0
     
   return (
     <>
     <Breadcrumb categories={categories}/>
     <div className='ResultDescriptionContent'>
             <div className='ResultDescription-l'>
-                <img src={picture} />
+                <img src={picture} alt={'img'}/>
                 <div className='description'>
                     <span className='description-title'>
                         {title}
@@ -37,8 +37,8 @@ function ItemDescription({item}) {
                 </span>
                 <span className='titulo'>{title}</span>
                 <span className='precio'>
-                    {finalPrice} 
-                    {/* <span className='centavos'>00</span> */}
+                    ${amount} 
+                    <span className='centavos'>{centavos === 0 ? '00' : centavos.toStrign()}</span>
                 </span>
                 <button className='comprar'>
                     Comprar

@@ -1,7 +1,6 @@
 import Item from '../../components/item/Item';
 import Breadcrumb from '../../components/breadcrumb/Breadcrumb';
 import './Result.css'
-import { Link } from "wouter";
 import { useItems } from '../../hooks/useItems';
 import Context from '../../context/Context';
 import { useContext } from 'react';

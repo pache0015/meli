@@ -20,6 +20,6 @@ export function useItems({search}){
                 console.log(err)
             })
         }
-    }, [items, search])
+    }, [items, search, setCategories])
     return { items}
 }

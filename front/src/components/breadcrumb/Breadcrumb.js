@@ -1,5 +1,3 @@
-import { useContext, useEffect, useState } from 'react';
-import Context from '../../context/Context';
 import './Breadcrumb.css'
 
 function Breadcrumb({categories}) {
