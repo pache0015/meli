@@ -2,23 +2,14 @@ import './Searchbar.css';
 import logo from '../../img/Logo.png'
 import { useContext, useState } from 'react';
 import searchImg from '../../img/search.png'
-import { Link , useLocation} from 'react-router-dom';
 import React from 'react';
 import Context from '../../context/Context';
-
-// Custom hook
-// function useQuery() {
-//   const { search } = useLocation();
-
-//   return React.useMemo(() => new URLSearchParams(search), [search]);
-// }
+import { Link, useLocation } from "wouter";
 
 function Searchbar() {
 
-  //let query = useQuery()
-  const {setSearch} = useContext(Context)
-  const {setItems} = useContext(Context)
-  const {setCategories} = useContext(Context)
+  //const {setCategories} = useContext(Context)
+  const [_, pushLocation] = useLocation()
 
   const [inputText, setInputText] = useState('');
   let inputHandler = (e) => {
@@ -28,14 +19,11 @@ function Searchbar() {
 
   const handleSearch = ()=>{
     if (inputText !== '') {
-      setSearch(inputText)
+      pushLocation(`/items/search=${inputText}`)
     }
   }
   const goHome = () => {
-    setCategories([])
-    setItems([]) 
-    setSearch('')
-    setInputText('')
+    pushLocation(`/`)
   }
 
   return (
@@ -47,11 +35,10 @@ function Searchbar() {
         </Link>
         <div className="Searcher" >
         <input type='text' className='input-text' placeholder='Nunca dejes de buscar'/>
-        <Link to={`/items?search=${inputText}`} className='linkButton' onClick={handleSearch}>
+        
+          <button onClick={handleSearch} className='search'>
               <img src={searchImg}/>
-          {/* <button onClick={handleSearch}>
-          </button> */}
-        </Link>
+          </button>
     </div>
     </div>
   );

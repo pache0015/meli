@@ -32,7 +32,7 @@
 ::placeholder{
     color: #999999;
 }
-.Searcher .linkButton {
+.Searcher .search {
     width: 35px;
     height: 35px;
     border: 0;
@@ -43,6 +43,6 @@
     cursor: pointer;
     background-color: #EEEEEE;
 }
-.Searcher .linkButton img{
+.Searcher .search img{
     height: 50%;
 }

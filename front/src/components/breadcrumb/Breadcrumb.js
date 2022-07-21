@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import Context from '../../context/Context';
 import './Breadcrumb.css'
 
 function Breadcrumb({categories}) {
-
+  
+  
   return (
     <div className="Breadcrumb">
       {

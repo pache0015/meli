@@ -1,6 +1,6 @@
 import './Item.css'
 import envio from '../../img/ic.png'
-import { Link } from 'react-router-dom';
+import { Link } from 'wouter';
 
 function Item({id, title, price, picture, free_shipping}) {
     const { amount,currency } = price
@@ -9,7 +9,7 @@ function Item({id, title, price, picture, free_shipping}) {
 
   return (
     <div className="Item">
-        <div className='linkItem'>
+        <Link to={`/items/${id}`} className='linkItem'>
             <img className='producto' src={picture} />
             <div className='Info'>
                 <div className='Info-top'>
@@ -23,7 +23,7 @@ function Item({id, title, price, picture, free_shipping}) {
                     {title}
                 </div>
             </div>
-        </div>
+        </Link>
     </div>
   );
 }
