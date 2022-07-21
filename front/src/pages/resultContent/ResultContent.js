@@ -17,8 +17,8 @@ function ResultContent({params}) {
      <>
     <Breadcrumb categories={categories}/>
 
-    // Se mapea la lista de items traida por el hook y se pasa por props el desgloce
-    //    del obj contenido en el array
+    {/* // Se mapea la lista de items traida por el hook y se pasa por props el desgloce
+    //    del obj contenido en el array */}
     <div className='ResultContent'>
         {
         items.map(({id, title, price, picture, free_shipping}) =>
