@@ -1,20 +1,25 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import Context from "../context/Context";
 import getSearch from "../services/SearchService";
 
-export function useItems(){
+export function useItems({search}){
 
-    const {search} = useContext(Context)
-    const {items, setItems} = useContext(Context)
-    const {categories, setCategories} = useContext(Context)
+    const [items, setItems] = useState([])
+    const {setCategories} = useContext(Context)
 
     useEffect( function (){
-
+        
+        if(items){
         getSearch(search)
             .then(obj =>{
-                setCategories(obj.categories)
+                
                 setItems(obj.items)
-            }, [])
-    })
-    return {items, categories}
+                setCategories(obj.categories)
+            })
+            .catch(err =>{
+                console.log(err)
+            })
+        }
+    }, [items, search])
+    return { items}
 }
