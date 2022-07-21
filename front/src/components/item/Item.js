@@ -7,6 +7,8 @@ function Item({id, title, price, picture, free_shipping}) {
     const finalPrice = new Intl.NumberFormat('es-AR', {currency: currency, style: 'currency'}).format(amount)
   return (
     <div className="Item">
+        {/* Se usa el link englobando todo el resto del item para poder ahcer
+                la redireccion en la url y enviar el parametro id */}
         <Link to={`/items/${id}`} className='linkItem'>
             <img className='producto' src={picture} alt={'img'}/>
             <div className='Info'>

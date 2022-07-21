@@ -4,7 +4,7 @@ import getItem from "../services/ItemService";
 export function useItem({id}){
 
     const [item, setItem] = useState()
-
+//Usado para llamar al service encargado de traer la info del item seleccionado o ingresado por url
     useEffect( function (){
 
         if(id){

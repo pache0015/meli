@@ -7,6 +7,8 @@ import { ContextProvider } from "./context/Context";
 import { Route, Switch } from "wouter";
 
 function App() {
+  // Se incluyen las 3 rutas posibles a ingresar y/o navegar
+  //  con sus respectivos componentes(pages)
   return (
     <div className="App">
         <ContextProvider>

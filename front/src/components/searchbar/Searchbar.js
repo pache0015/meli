@@ -7,15 +7,20 @@ import { Link, useLocation } from "wouter";
 
 function Searchbar() {
 
+//Se usa pushLocation para setear la url con el parametro ingresado en el input
+
   // eslint-disable-next-line
   const [_, pushLocation] = useLocation()
+
   const [inputText, setInputText] = useState('');
+
   let inputHandler = (e) => {
     let lowerCase = e.target.value.toLowerCase();
     setInputText(lowerCase);
   };
 
   const handleSearch = ()=>{
+    //Para evitar hacer el pushLocation a ningun lado
     if (inputText !== '') {
       pushLocation(`/items/search=${inputText}`)
     }

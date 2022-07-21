@@ -4,7 +4,11 @@ import Context from '../../context/Context';
 
 function ItemDescription({item}) {
     
+    //Se usa el contexto para traer el array de categorias y asi alimentar el breadcumb
     const {categories} = useContext(Context)
+
+    //en un principio las propertys de item son undefined,
+    //  por eso el operador ternario. 
     const title = item ? item.title : ''
     const picture = item ? item.picture : ''
     const description = item ? item.description : ''

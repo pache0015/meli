@@ -4,6 +4,7 @@ const fromApiResponseToItems = apiResponse =>{
 
     if (Array.isArray(items)){
         return {items: items, categories: categories}
+        // Se retorna obj para manejarlo de forma más prolija en el hook
     }
     return []
 }
